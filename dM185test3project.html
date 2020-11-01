@@ -1,0 +1,2702 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Math Support By Justin</title>
+
+<font style="line-height:150%">
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+
+
+<script type="text/javascript"  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+
+
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}  });</script>
+
+
+
+
+
+<SCRIPT language="Javascript" type="Text/Javascript">
+
+function factorial(num)
+
+{
+
+    // If the number is less than 0, reject it.
+
+    if (num < 0) {
+
+        return -1;
+
+    }
+
+    // If the number is 0, its factorial is 1.
+
+    else if (num == 0) {
+
+        return 1;
+
+    }
+
+    var tmp = num;
+
+    while (num-- > 2) {
+
+        tmp *= num;
+
+    }
+
+    return tmp;
+
+}
+
+function factors(num)
+
+{
+
+		var tmp=[];
+
+		for (i = 1; i < (num+1)/2; i++) {
+
+				if (num%i==0)
+
+						{tmp.push(i);
+
+						tmp.push(num/i);}
+
+		}
+
+    
+
+    return tmp;
+
+}
+
+
+
+function leastcm(num1,num2)
+
+{
+
+		var max = 0;
+
+		var min = 0;
+
+		if (num1>num2){max = num1; min=num2;}
+
+		else{max=num2; min=num1;}
+
+
+
+		var g1 = [];
+
+		var g2 = [];
+
+		var lcm = 0;
+
+
+
+
+
+    for (i = 0; i <num2*num1+1; i+=min) 
+
+    		{	g1.push(i);	    		}		
+
+
+
+		
+
+    for (i = 0; i <num1*num2+1; i+=max) 
+
+    		{	g2.push(i)	;    		}	
+
+
+
+ 		if (max%min==0){lcm = max ;}
+
+		else{		
+
+			for (i=0; i<g2.length; i++){
+
+					for(k=0;k<g1.length;k++) {
+
+							if(g2[i]==g1[k]){lcm=g1[k]; break;} 
+
+							}
+
+					}
+
+	 		}	
+
+    return lcm;
+
+}
+
+
+
+
+
+function factors(num)
+
+{
+
+		var tmp=[];
+
+		for (i = 1; i < (num+1 ) ; i++) {
+
+				if (num%i==0){
+
+						tmp.push(i);
+
+						 }
+
+		}
+
+    
+
+    return tmp;
+
+}
+
+
+
+function gcf(num1,num2)
+
+{
+
+		var t1 = factors(num1);
+
+		var t2 = factors(num2);
+
+		var gf = 0;
+
+ 
+
+		for (i = 0; i < (t1.length) ; i++)	{
+
+				for (k = 0; k < (t2.length) ; k++) {if (t2[k]==t1[i]) {gf=t2[k]; break;}   }
+
+		}	
+
+		return gf;
+
+ 
+
+}
+
+</SCRIPT>
+
+ <link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css" />
+
+ <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.1/jsxgraphcore.js"></script>
+
+
+
+Use to Translate Language
+
+<div id="google_translate_element"></div><script type="text/javascript">
+
+function googleTranslateElementInit() {
+
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+
+}
+
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+        <SCRIPT language="Javascript" type="Text/Javascript">
+
+function Change(choice, locate){
+
+ var tagname="";
+
+var grade="wrong";
+
+if (choice=="test3p02A"){tagname='QPYtest3p02A'; if (locate=='0'){grade='right';} }
+
+if (choice=="test3p03Arandom"){tagname='QPYtest3p03Arandom'; if (locate=='1'){grade='right';} }
+
+if (choice=="test3p04Arandom"){tagname='QPYtest3p04Arandom'; if (locate=='1'){grade='right';} }
+
+if (choice=="test3p11A"){tagname='QPYtest3p11A'; if (locate=='0'){grade='right';} }
+
+if (choice=="test3p08A"){tagname='QPYtest3p08A'; if (locate=='0'){grade='right';} }
+
+if (choice=="test3p13aArandom"){tagname='QPYtest3p13aArandom'; if (locate=='1'){grade='right';} }
+
+if (choice=="test3p14aArandom"){tagname='QPYtest3p14aArandom'; if (locate=='1'){grade='right';} }
+
+if (choice=="test3p15Brandom"){tagname='QPYtest3p15Brandom'; if (locate=='1'){grade='right';} }
+
+if (choice=="test3p10A"){tagname='QPYtest3p10A'; if (locate=='0'){grade='right';} }
+
+if (choice=="test3p18A"){tagname='QPYtest3p18A'; if (locate=='0'){grade='right';} }
+
+if (choice=="test3p19Arandom"){tagname='QPYtest3p19Arandom'; if (locate=='0'){grade='right';} }
+
+if (choice=="test3p20Arandom"){tagname='QPYtest3p20Arandom'; if (locate=='0'){grade='right';} }
+
+if (choice=="test3p21Arandom"){tagname='QPYtest3p21Arandom'; if (locate=='1'){grade='right';} }
+
+if (choice=="test3p22Arandom"){tagname='QPYtest3p22Arandom'; if (locate=='1'){grade='right';} }
+
+if (choice=="test3p23Arandom"){tagname='QPYtest3p23Arandom'; if (locate=='1'){grade='right';} }
+
+if (choice=="test3p24Arandom"){tagname='QPYtest3p24Arandom'; if (locate=='1'){grade='right';} }
+
+if (choice=="test3p25Arandom"){tagname='QPYtest3p25Arandom'; if (locate=='1'){grade='right';} }
+
+if (choice=="test3p26Arandom"){tagname='QPYtest3p26Arandom'; if (locate=='1'){grade='right';} }
+
+if (choice=="test3p27Arandom"){tagname='QPYtest3p27Arandom'; if (locate=='1'){grade='right';} }
+
+document.getElementById(tagname).innerHTML=" " ; 
+
+document.getElementById(tagname).innerHTML="Your choice "+ locate + " is " +grade + ".";  
+
+}
+
+</SCRIPT>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.00">
+
+</head>
+
+<script language="JavaScript">
+
+function ShowHide(divId)
+
+{
+
+if(document.getElementById(divId).style.display == 'none')
+
+{
+
+document.getElementById(divId).style.display='block';
+
+}
+
+else
+
+{
+
+document.getElementById(divId).style.display = 'none';
+
+}
+
+}
+
+</script> <body>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p02Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p02A ">  
+
+  <input type= "hidden" name="title", value=" Derivative Formulas ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p02Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p02A ">  
+
+  <input type= "hidden" name="title", value=" Derivative Formulas ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p02Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Derivative Formulas <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Use the table to calculate when $x=0$ <br> $\dfrac{d}{dx}(f(g(x))$<br> <br> <br>$\dfrac{d}{dx}\dfrac{f(x)}{g(x)}$<br> <br> <br> $\dfrac{d}{dx}(f(x))^{5}$ <br> <br> <br>$\dfrac{d}{dx}(f(x)\cdot g(x))$ <br> <br>  <br> 
+
+\begin{array}{|c|p{0.75cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|p{0.75cm}|}
+
+ \hline 
+
+ & -2 & -1 & 0 & 1 & 2  \\ 
+
+ \hline 
+
+f(x)   & 5 & 3 & 3 & 4 & 0\\ 
+
+ \hline 
+
+f'(x)  & 1 & -1 & 2 & -2 & 0\\ 
+
+ \hline 
+
+g(x)   & 0 & -2 & 1 & 2 & -1   \\ 
+
+ \hline 
+
+g'(x)  & 3 & -5 & 7 & 7 & -2  \\ 
+
+ \hline 
+
+ \end{array} 
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p02Ahint0')" href="javascript:;" >Step 1: Chain Rule  
+
+</a>
+
+<div class="mid" id="QPYtest3p02Ahint0" style="DISPLAY: none" >
+
+ $\dfrac{d}{dx}(f(g(x))  = f'(g(x)) \cdot g'(x)$ <br> <br> <br> 
+
+ $f'(g(0)) \cdot g'(0) = f'(1) \cdot 7 = -2\cdot7= -14$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p02Ahint1')" href="javascript:;" >Step 2: Quotient Rule 
+
+</a>
+
+<div class="mid" id="QPYtest3p02Ahint1" style="DISPLAY: none" >
+
+ $\dfrac{d}{dx}\dfrac{f(x)}{g(x)}=\dfrac{f'(x)g(x)-f(x)g'(x)}{(g(x))^{2}}$ <br> <br> <br> 
+
+ $\dfrac{f'(0)g(0)-f(0)g'(0)}{(g(0))^{2}}$ <br> <br> <br> 
+
+ $\dfrac{(2)(1)-(3)(7)}{1^{2}}$ <br> <br> <br> 
+
+ $\dfrac{2-21}{1}$ <br> <br> <br> 
+
+ $\dfrac{-19}{1}$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p02Ahint2')" href="javascript:;" >Step 3: Power Rule 
+
+</a>
+
+<div class="mid" id="QPYtest3p02Ahint2" style="DISPLAY: none" >
+
+ $\dfrac{d}{dx}(f(x))^{n}=n(f(x))^{n-1}(f'(x))$ <br> <br> <br> 
+
+ $n(f(0))^{n-1}\cdot f'(0)$ <br> <br> <br> 
+
+ $5(3)^{4}(2) = 810$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p02Ahint3')" href="javascript:;" >Step 4: Product Rule 
+
+</a>
+
+<div class="mid" id="QPYtest3p02Ahint3" style="DISPLAY: none" >
+
+ $\dfrac{d}{dx}(f(x)\cdot g(x))=f'(x)g(x)+f(x)g'(x)$ <br> <br> <br> 
+
+ $f'(0)g(0)+f(x)g'(0)$ <br> <br> <br> 
+
+ $(2)(1)+(3)(7) $ <br> <br> <br> 
+
+ $2+21 = 23 $ <br> <br> <br> 
+
+</div>
+
+</p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p03Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p03A ">  
+
+  <input type= "hidden" name="title", value=" Natural Log Derivative  ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p03Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p03A ">  
+
+  <input type= "hidden" name="title", value=" Natural Log Derivative  ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p03Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Natural Log Derivative  <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Calculate the derivative of $\ln(12x^{18})$    
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p03Ahint0')" href="javascript:;" >Step 1: Formula for Natural Log Derivative  
+
+</a>
+
+<div class="mid" id="QPYtest3p03Ahint0" style="DISPLAY: none" >
+
+ $(\ln(f(x)))' = \dfrac{f'(x)}{f(x)}$ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p03Ahint1')" href="javascript:;" >Step 2: Apply Formula 
+
+</a>
+
+<div class="mid" id="QPYtest3p03Ahint1" style="DISPLAY: none" >
+
+ $\ln(12x^{12}) = \dfrac{216x^{17}}{12x^{18}}$ 
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Natural Log Derivative  Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p03Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p03Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p03A();" />
+
+<div class="mid" id="test3p03Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<br><a onclick ="javascript:ShowHide('test3p03Arandomans')" href="javascript:;" >See Solution Steps 
+
+</a><br>
+
+<div class="mid" id="test3p03Arandomans" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p03A()
+
+ function myFunctiontest3p03A() {var b = Math.floor(Math.random() * 10)+2 ; 
+
+var a =   Math.floor(Math.random() * 10)+9 ; 
+
+var e =    Math.floor(Math.random() * 10)-30 ;   
+
+document.getElementById("test3p03Arandom").innerHTML = "Question Calculate the derivative of $\\ln( "+(b).toString()+"x^{ "+(a).toString()+"})$<br>  <br> "  ;
+
+var math = document.getElementById("test3p03Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+document.getElementById("test3p03Arandomans").innerHTML = "Answer  <br><br> Step 1: $Derivative of \\ln(f(x)) = \\dfrac{f'(x)}{f(x)}$<br><br> Step 2:   $\\dfrac{"+(b*a).toString()+"x^{ "+(a-1).toString()+"}}{"+(b).toString()+"x^{ "+(a).toString()+"}} $"  ;
+
+var math2 = document.getElementById("test3p03Arandomans");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math2]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p04Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p04A ">  
+
+  <input type= "hidden" name="title", value=" Reading Graphs ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p04Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p04A ">  
+
+  <input type= "hidden" name="title", value=" Reading Graphs ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p04Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Reading Graphs <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Sketch a graph that is has a:\\ local max at  $( -7,5) $, $( 0,0) $ and $( 8,3) $ \\ local min at  $( -2,-3) $ and $( 5,-3) $ 
+
+ \\ concave down on $( -7, 0) $ 
+
+ \\ concave up on $( 0, 5) $ \\ 
+
+    <div id="box" class="jxgbox" style="width:300px; height:300px;"></div><script type="text/javascript">var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-9, 9, 9, -9], grid: true,  axis: true });var A = board.create('point', [-7,5],{size:2,withLabel:true});var B = board.create('point', [ -2,-3],{size:2,withLabel:true});var C = board.create('point', [ 0,0],{size:2,withLabel:true});var D = board.create('point', [ 5,-3],{size:2,withLabel:true});var E = board.create('point', [ 8,3],{size:2,withLabel:true});var cu = [];cu[0]=A;cu[1]= board.create('point', [ -4.25,5],{size:0,withLabel:false ,strokeWidth:0});cu[2]= board.create('point', [-2.25,2],{size:0,withLabel:false ,strokeWidth:0}); cu[3]=B;var du = [];du[0]=B;du[1]= board.create('point', [ -1.5,-0.75],{size:0,withLabel:false ,strokeWidth:0});du[2]= board.create('point', [-0.3,-0.15],{size:0,withLabel:false ,strokeWidth:0}); du[3]=C;var c = board.create('curve', JXG.Math.Numerics.bezier(cu),{strokecolor:'blue', strokeOpacity:0.6, strokeWidth:5}) ;var d = board.create('curve', JXG.Math.Numerics.bezier(du),{strokecolor:'blue', strokeOpacity:0.6, strokeWidth:5}) ;var eu = [];eu[0]=C;eu[1]= board.create('point', [ 1.25,-2.55],{size:0,withLabel:false ,strokeWidth:0});eu[2]= board.create('point', [4.75,-2.85],{size:0,withLabel:false ,strokeWidth:0}); eu[3]=D;var e= board.create('curve', JXG.Math.Numerics.bezier(eu),{strokecolor:'blue', strokeOpacity:0.6, strokeWidth:5}) ;var du = [];du[0]=D;du[1]= board.create('point', [ 6.35,-2.1],{size:0,withLabel:false ,strokeWidth:0});du[2]= board.create('point', [7.85,0.3],{size:0,withLabel:false ,strokeWidth:0}); du[3]=E;var d = board.create('curve', JXG.Math.Numerics.bezier(du),{strokecolor:'blue', strokeOpacity:0.6, strokeWidth:5}) ;</script><br><a onclick ="javascript:ShowHide('QPYtest3p04Ahint0')" href="javascript:;" >Step 1: Concave Up Curves 
+
+</a>
+
+<div class="mid" id="QPYtest3p04Ahint0" style="DISPLAY: none" >
+
+  Concave up is a curve formed under the line
+
+ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p04Ahint1')" href="javascript:;" >Step 2: Concave Down Curves 
+
+</a>
+
+<div class="mid" id="QPYtest3p04Ahint1" style="DISPLAY: none" >
+
+ Concave down is a curve formed above the line 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p04Ahint2')" href="javascript:;" >Step 3: Inflection Points 
+
+</a>
+
+<div class="mid" id="QPYtest3p04Ahint2" style="DISPLAY: none" >
+
+ Inflection points are locations where graphs change concavity 
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Reading Graphs Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p04Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p04Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p04A(rboard);" />
+
+<div class="mid" id="test3p04Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<div id="box3" class="jxgbox" style="width:300px; height:300px;"></div><br><a onclick ="javascript:ShowHide('test3p04Arandomans')" href="javascript:;" >See Solution Steps 
+
+</a><br>
+
+<div class="mid" id="test3p04Arandomans" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+var rboard = JXG.JSXGraph.initBoard('box3', {boundingbox: [-8, 8, 8, -8] , grid: true,  axis: true  });myFunctiontest3p04A(rboard)
+
+ function myFunctiontest3p04A(tgraph) {var Ax = Math.floor(Math.random() * 2)-8 ; 
+
+var Ay = 7- (Math.floor(Math.random() * 4)) ; 
+
+var Bx =  Math.floor(Math.random() * 3)-4;
+
+var By =   ( Math.floor(Math.random() * 3))-7;
+
+var Cx =  Math.floor(Math.random() * 2)+0;
+
+var Cy = (Math.random() * Ay)-1; 
+
+var Dx =  Math.floor(Math.random() * 2)+4; 
+
+var Dy =  By;
+
+var Ex =  8; 
+
+var Ey =   (Math.random() * Ay)-1;
+
+thegraph = JXG.JSXGraph.initBoard('box3',  {boundingbox: [ -9, 9, 9, -9] , grid: true,  axis: true  });
+
+var A = thegraph.create('point', [Ax,Ay],{size:2,withLabel:true});var B = thegraph.create('point', [Bx,By ],{size:2,withLabel:true});var C = thegraph.create('point', [Cx,Cy ],{size:2,withLabel:true});var D = thegraph.create('point', [Dx,Dy ],{size:2,withLabel:true});var E = thegraph.create('point', [Ex,Ey ],{size:2,withLabel:true});var d1 = Bx-Ax;
+
+var cu = [];cu[0]=A;cu[1]= thegraph.create('point', [  Ax+d1*0.55,Ay ],{size:0,withLabel:false ,strokeWidth:0});cu[2]= thegraph.create('point', [Bx-d1*0.05,By+d1 ],{size:0,withLabel:false ,strokeWidth:0}); cu[3]=B;var d2 = Cx-Bx;var d2y = Cy-By;var du = [];du[0]=B;du[1]= thegraph.create('point', [ Bx+d2*0.25,By+d2y*0.75],{size:0,withLabel:false ,strokeWidth:0});du[2]= thegraph.create('point', [Cx-d2*0.15,Cy-d2y*0.05 ],{size:0,withLabel:false ,strokeWidth:0}); du[3]=C;var c = thegraph.create('curve', JXG.Math.Numerics.bezier(cu),{strokecolor:'blue', strokeOpacity:0.6, strokeWidth:5}) ;var d = thegraph.create('curve', JXG.Math.Numerics.bezier(du),{strokecolor:'blue', strokeOpacity:0.6, strokeWidth:5}) ;var d3 = Dx-Cx;var d3y = Math.abs(Dy-Cy);var eu = [];eu[0]=C;eu[1]= thegraph.create('point', [Cx+d3*0.25,Cy-d3y*0.85],{size:0,withLabel:false ,strokeWidth:0});eu[2]= thegraph.create('point', [Dx-d3*0.05,Dy+d3y*0.05],{size:0,withLabel:false ,strokeWidth:0}); eu[3]=D;var e= thegraph.create('curve', JXG.Math.Numerics.bezier(eu),{strokecolor:'blue', strokeOpacity:0.6, strokeWidth:5}) ;d4 = Ex-Dx;d4y = Math.abs(Ey-Dy);var fu = [];fu[0]=D;fu[1]= thegraph.create('point', [Dx+d4*0.45,Dy+d4y*0.15],{size:0,withLabel:false ,strokeWidth:0});fu[2]= thegraph.create('point', [Ex-d4*0.05,Ey-d4y*0.45],{size:0,withLabel:false ,strokeWidth:0}); fu[3]=E;var f = thegraph.create('curve', JXG.Math.Numerics.bezier(fu),{strokecolor:'blue', strokeOpacity:0.6, strokeWidth:5}) ;document.getElementById("test3p04Arandomans").innerHTML = "<br><br>Step 1:    $f'(x)=0$ when the graph changes from increasing to decreasing or decreasing to increasing<br><br>Step 2:   $f'(x)=0$ at $x="+Bx.toString()+"$ and $x="+Cx.toString()+"$  and $x="+Dx.toString()+"$<br><br>Step 3:   $f'(x)>0$ when the graph is increasing <br><br>Step 4:   $f'(x)>0$ on the interval $("+Bx.toString()+","+Cx.toString()+")$ and $("+Dx.toString()+","+Ex.toString()+")$  <br><br>Step 5:   $f'(x)<0$ when the graph is decreasing <br><br>Step 6:   $f'(x)<0$ on the interval $("+Ax.toString()+","+Bx.toString()+")$ and $("+Cx.toString()+","+Dx.toString()+")$  "  ;
+
+var math2 = document.getElementById("test3p04Arandomans");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math2]);
+
+document.getElementById("test3p04Arandom").innerHTML = "Question Use the graph to identify <br> <br> Solutions to $f'(x)=0$<br> <br> Solutions to $f'(x)>0$<br> <br> Solutions to $f'(x)<0$"  ;
+
+var math = document.getElementById("test3p04Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p11Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p11A ">  
+
+  <input type= "hidden" name="title", value=" Derivatives of log functions with base b ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p11Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p11A ">  
+
+  <input type= "hidden" name="title", value=" Derivatives of log functions with base b ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p11Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Derivatives of log functions with base b <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Find the derivative of $\log_{7}(e^{3x}+x^{7})$<br><a onclick ="javascript:ShowHide('QPYtest3p11Ahint0')" href="javascript:;" >Step 1: Know derivative 
+
+</a>
+
+<div class="mid" id="QPYtest3p11Ahint0" style="DISPLAY: none" >
+
+ $((\log_{b}(f))' = \dfrac{f'}{f \ln b})$ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p11Ahint1')" href="javascript:;" >Step 2: Apply derivative formula 
+
+</a>
+
+<div class="mid" id="QPYtest3p11Ahint1" style="DISPLAY: none" >
+
+ $\log_{7}(x^{3}+x^{7})$ <br> <br> <br> 
+
+ $\dfrac{3e^{3x}+7x^{6}}{(e^{3x}+x^{7}) \ln 7} $ <br> <br> <br> 
+
+</div>
+
+</p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p11Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p11A ">  
+
+  <input type= "hidden" name="title", value=" Derivatives of log functions with base b ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p11Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p11A ">  
+
+  <input type= "hidden" name="title", value=" Derivatives of log functions with base b ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p11Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Derivatives of log functions with base b <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p11Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p11Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p11A();" />
+
+<div class="mid" id="test3p11Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p11A()
+
+ function myFunctiontest3p11A() {var b = Math.floor(Math.random() * 10)+1 ; 
+
+var a =  Math.floor(Math.random() * 4)+1 ; 
+
+var c = a+ Math.floor(Math.random() * 3)+1 
+
+while(c<=0){var b = Math.floor(Math.random() * 10)+1 ; var a = b+Math.floor(Math.random() * 5)+1 ;var df = a*a-b*b ;var c = df-a*b ; } 
+
+document.getElementById("test3p11Arandom").innerHTML = "Question  Find the derivative of $\\log_{ "+(a).toString()+"}(x^{ "+(b).toString()+"}+x^{ "+(c).toString()+"})$<br><br>Derivative of Log Rule: $\\dfrac{d}{dx}(\\log{a}f(x)) =\\dfrac{f'(x)}{\\ln(a)(f(x))} $  <br><br>Applied Derivative of Log Rule: $\\dfrac{"+(b).toString()+"x^{ "+(b-1).toString()+"}+"+(c).toString()+"x^{ "+(c-1).toString()+"}}{\\ln( "+(a).toString()+" )(x^{ "+(b).toString()+"}+x^{ "+(c).toString()+"} )}$  "  ;
+
+var math = document.getElementById("test3p11Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p08Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p08A ">  
+
+  <input type= "hidden" name="title", value=" Quotient Rule ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p08Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p08A ">  
+
+  <input type= "hidden" name="title", value=" Quotient Rule ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p08Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Quotient Rule <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Find the derivative of $\dfrac{\tan 9x}{e^{6x}}$<br><a onclick ="javascript:ShowHide('QPYtest3p08Ahint0')" href="javascript:;" >Step 1: Know Formula 
+
+</a>
+
+<div class="mid" id="QPYtest3p08Ahint0" style="DISPLAY: none" >
+
+ $(\dfrac{f}{g})' = \dfrac{gf'-g'f}{g^2}$ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p08Ahint1')" href="javascript:;" >Step 2: Know Derivatives 
+
+</a>
+
+<div class="mid" id="QPYtest3p08Ahint1" style="DISPLAY: none" >
+
+ $f = \tan 9x$ and $f'= 9\sec^{2} 9x$ <br> <br> <br> 
+
+ $g=e^{6x}$ and $g'=6e^{6x}$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p08Ahint2')" href="javascript:;" >Step 3: Apply Formula 
+
+</a>
+
+<div class="mid" id="QPYtest3p08Ahint2" style="DISPLAY: none" >
+
+ $\dfrac{e^{6x} (9\sec^{2} 9x)+6e^{6x}(\tan 9x)}{(e^{6x})^{2}}$ <br> <br> <br> 
+
+ $\dfrac{9e^{6x} \sec^{2} 9x+6e^{6x}\tan 9x}{e^{12x}}$ <br> <br> <br> 
+
+</div>
+
+</p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p08Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p08A ">  
+
+  <input type= "hidden" name="title", value=" Quotient Rule ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p08Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p08A ">  
+
+  <input type= "hidden" name="title", value=" Quotient Rule ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p08Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Quotient Rule <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p08Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p08Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p08A();" />
+
+<div class="mid" id="test3p08Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p08A()
+
+ function myFunctiontest3p08A() {var b = Math.floor(Math.random() * 10)+1 ; 
+
+var a =  Math.floor(Math.random() * 4)+1 ; 
+
+var c = a+ Math.floor(Math.random() * 3)+1 
+
+while(c<=0){var b = Math.floor(Math.random() * 10)+1 ; var a = b+Math.floor(Math.random() * 5)+1 ;var df = a*a-b*b ;var c = df-a*b ; } 
+
+document.getElementById("test3p08Arandom").innerHTML = "Question  Find the derivative of $\dfrac{\\tan  "+(a).toString()+"x}{e^{ "+(b).toString()+"x}}$<br><br>Quotient Rule:  $(\\dfrac{f}{g})' = \\dfrac{gf'-g'f}{g^2}$  <br><br>Applied Quotient Rule:    $\\dfrac{(e^{ "+(b).toString()+"x})("+(a).toString()+"\\sec^{2}  "+(a).toString()+"x)-("+(b).toString()+"e^{ "+(b).toString()+"x})(\\tan  "+(a).toString()+"x)}{(\\tan  "+(a).toString()+"x)^{2}}$ "  ;
+
+var math = document.getElementById("test3p08Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+}</script><br><a onclick ="javascript:ShowHide('QPYtest3p08Ahint0')" href="javascript:;" >Step 1: Know Formula 
+
+</a>
+
+<div class="mid" id="QPYtest3p08Ahint0" style="DISPLAY: none" >
+
+ $(\dfrac{f}{g})' = \dfrac{gf'-g'f}{g^2}$ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p08Ahint1')" href="javascript:;" >Step 2: Know Derivatives 
+
+</a>
+
+<div class="mid" id="QPYtest3p08Ahint1" style="DISPLAY: none" >
+
+ $f = \tan 9x$ and $f'= 9\sec^{2} 9x$ <br> <br> <br> 
+
+ $g=e^{6x}$ and $g'=6e^{6x}$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p08Ahint2')" href="javascript:;" >Step 3: Apply Formula 
+
+</a>
+
+<div class="mid" id="QPYtest3p08Ahint2" style="DISPLAY: none" >
+
+ $\dfrac{e^{6x} (9\sec^{2} 9x)+6e^{6x}(\tan 9x)}{(e^{6x})^{2}}$ <br> <br> <br> 
+
+ $\dfrac{9e^{6x} \sec^{2} 9x+6e^{6x}\tan 9x}{e^{12x}}$ <br> <br> <br> 
+
+</div>
+
+</p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p13aAout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p13aA ">  
+
+  <input type= "hidden" name="title", value=" Tangent of a curve using implicit differentiation ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p13aAout"> 
+
+  <input type= "hidden" name="problem", value=" test3p13aA ">  
+
+  <input type= "hidden" name="title", value=" Tangent of a curve using implicit differentiation ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p13aAout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Tangent of a curve using implicit differentiation <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Find $\dfrac{dy}{dx}$ and the equation of the tangent of \\ $x^{4}-xy= 10$ at the point $( 2, 3)$ <br><a onclick ="javascript:ShowHide('QPYtest3p13aAhint0')" href="javascript:;" >Step 1: Implicit Derivative
+
+</a>
+
+<div class="mid" id="QPYtest3p13aAhint0" style="DISPLAY: none" >
+
+ Implicit Derivative $4x^{3}-(x\dfrac{dy}{dx}+y)=0$  <br> <br> <br> 
+
+ Simplify: $ 4x^{3}-x\dfrac{dy}{dx}-y = 0$  <br> <br> <br> 
+
+ Simplify: $ -x\dfrac{dy}{dx} =  y- 4x^{3}$  <br> <br> <br> 
+
+ Simplify: $ \dfrac{dy}{dx}= \dfrac{y- 4x^{3}}{-x}$  <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p13aAhint1')" href="javascript:;" >Step 2: Get Value of Slope
+
+</a>
+
+<div class="mid" id="QPYtest3p13aAhint1" style="DISPLAY: none" >
+
+ $ \dfrac{dy}{dx}$ is the slope function   <br> <br> <br> 
+
+ $ \dfrac{dy}{dx}=\dfrac{ 2- 4(3)^{3}}{- 3}  $ <br> <br> <br> 
+
+ $ \dfrac{dy}{dx}=\dfrac{  -106} {- 3}  $ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p13aAhint2')" href="javascript:;" >Step 3: Equation of a Line: Point Slope Formula
+
+</a>
+
+<div class="mid" id="QPYtest3p13aAhint2" style="DISPLAY: none" >
+
+ Point Slope Formula: $y-y_{1} = m(x-x_{1})$ <br> <br> <br> 
+
+ Tangent to curve at $( 3, 2)$:    <br> <br> <br> 
+
+ Equation of tangent line: $y-2 =  \dfrac{  -106 }{- 3} (x-3)$ <br> <br> <br> 
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Tangent of a curve using implicit differentiation Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p13aArandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p13aAbtn" type="button" value="Generate Now" onclick="myFunctiontest3p13aA();" />
+
+<div class="mid" id="test3p13aArandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p13aA()
+
+ function myFunctiontest3p13aA() {var b = Math.floor(Math.random() * 10)+1 ; 
+
+var a = b+Math.floor(Math.random() * 5)+1 ; 
+
+var df = a*a-b*b ; 
+
+var c = df-a*b ; 
+
+while(c<=0){var b = Math.floor(Math.random() * 10)+1 ; var a = b+Math.floor(Math.random() * 5)+1 ;var df = a*a-b*b ;var c = df-a*b ; } 
+
+document.getElementById("test3p13aArandom").innerHTML = "Question Find $\\dfrac{dy}{dx}$ and the equation of the tangent line to $x^{2}-xy=y^{2}+"+(c).toString()+"$ at the point $( "+(a).toString()+", "+(b).toString()+")$<br><br> Derivative Solved: $\\dfrac{2x-y}{2y+x} =  \\dfrac{dy}{dx}$ <br><br> Slope is $\\dfrac{2( "+(a).toString()+")- "+(b).toString()+"}{2( "+(b).toString()+")+ "+(a).toString()+"} = \\dfrac{ "+(2*a-b).toString()+"}{ "+(2*b+a).toString()+"}$ <br><br>Equation of Tangent line Formula: $y-y_{1}= m(x-x_{1})$ <br><br>Equation of Tangent line: $y- "+(b).toString()+"=  \\dfrac{ "+(2*a-b).toString()+"}{ "+(2*b+a).toString()+"}(x- "+(a).toString()+")$ "  ;
+
+var math = document.getElementById("test3p13aArandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p14aAout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p14aA ">  
+
+  <input type= "hidden" name="title", value=" Chain Rule ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p14aAout"> 
+
+  <input type= "hidden" name="problem", value=" test3p14aA ">  
+
+  <input type= "hidden" name="title", value=" Chain Rule ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p14aAout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Chain Rule <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Find the derivative of $y= \sqrt[ 6 ]{(6+e^{-9x})}$<br><a onclick ="javascript:ShowHide('QPYtest3p14aAhint0')" href="javascript:;" >Step 1: Know Formula 
+
+</a>
+
+<div class="mid" id="QPYtest3p14aAhint0" style="DISPLAY: none" >
+
+ $(f(g(x))' = f'(g(x))\cdot g'(x)$ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p14aAhint1')" href="javascript:;" >Step 2: Know Derivatives 
+
+</a>
+
+<div class="mid" id="QPYtest3p14aAhint1" style="DISPLAY: none" >
+
+ $f = x^{\dfrac{1}{6}}$ and $f'=  \dfrac{1}{6}(x)^{\dfrac{-5}{6}}$ <br> <br> <br> 
+
+ $g=6+e^{-9x}$ and $g'=-9e^{-9x}$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p14aAhint2')" href="javascript:;" >Step 3: Apply Formula 
+
+</a>
+
+<div class="mid" id="QPYtest3p14aAhint2" style="DISPLAY: none" >
+
+   $\dfrac{1}{6}( 6+e^{-9x})^{\dfrac{-5}{6}}(-9e^{-9x})$   
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Chain Rule Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p14aArandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p14aAbtn" type="button" value="Generate Now" onclick="myFunctiontest3p14aA();" />
+
+<div class="mid" id="test3p14aArandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p14aA()
+
+ function myFunctiontest3p14aA() {var a1= Math.floor((Math.random() * 10) + 1); 
+
+while (a1%2==1){var a1= Math.floor((Math.random() * 50) + 1);}var a2= a1+Math.floor((Math.random() * 10) + 1); 
+
+while (a2==a1){var a1= Math.floor((Math.random() * 50) + 1); var a2= a1+Math.floor((Math.random() * 10) + 14);}var a3= Math.floor((Math.random() * 50) + 1); 
+
+while (a3%2==0){var a3= Math.floor((Math.random() * 50) + 1);}var a4= Math.floor((Math.random() * 50) + 1); 
+
+var a5= Math.floor((Math.random() * 50) + 1); 
+
+var c = a1+a2;
+
+document.getElementById("test3p14aArandom").innerHTML = "Question  Find the derivative of $y= \\sqrt{"+(a1).toString()+" -e^{-"+(a2).toString()+" x}}$<br><br>  Formula: $(f(g(x))' = f'(g(x))\\cdot g'(x)$<br><br> Answer: $\\dfrac{"+(a2).toString()+"e^{-"+(a2).toString()+"x}}{2\\sqrt{"+(a1).toString()+"-e^{-"+(a2).toString()+"x}}}$  "  ;
+
+var math = document.getElementById("test3p14aArandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p15Bout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p15B ">  
+
+  <input type= "hidden" name="title", value=" Product Rule ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p15Bout"> 
+
+  <input type= "hidden" name="problem", value=" test3p15B ">  
+
+  <input type= "hidden" name="title", value=" Product Rule ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p15Bout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Product Rule <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Find $f'(x)$ if $f(x) = x^{9} \tan 4x $<br><a onclick ="javascript:ShowHide('QPYtest3p15Bhint0')" href="javascript:;" >Step 1: Know Product Rule and Trig Derivatives 
+
+</a>
+
+<div class="mid" id="QPYtest3p15Bhint0" style="DISPLAY: none" >
+
+ $\dfrac{d}{dx}(f(x)g(x)) = f'(x) g(x) + f(x)g'(x)$ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p15Bhint1')" href="javascript:;" >Step 2: Know Trig Derivatives 
+
+</a>
+
+<div class="mid" id="QPYtest3p15Bhint1" style="DISPLAY: none" >
+
+ $f(x) = \tan 4x$ and $f'(x) = 4\sec^{2} 4x$ <br> <br> <br> 
+
+ $g(x) =x^{9}$ and $g'(x) = 9x^{8}$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p15Bhint2')" href="javascript:;" >Step 2: Apply Product Rule 
+
+</a>
+
+<div class="mid" id="QPYtest3p15Bhint2" style="DISPLAY: none" >
+
+ $( 9x^{8})(\tan 4x)+( 4\sec^{2} 4x)(x^{9})$ 
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Product Rule Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p15Brandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p15Bbtn" type="button" value="Generate Now" onclick="myFunctiontest3p15B();" />
+
+<div class="mid" id="test3p15Brandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p15B()
+
+ function myFunctiontest3p15B() {var b = Math.floor(Math.random() * 10)+1 ; 
+
+var a =  Math.floor(Math.random() * 4)+1 ; 
+
+var c = a+ Math.floor(Math.random() * 3)+1 
+
+while(c<=0){var b = Math.floor(Math.random() * 10)+1 ; var a = b+Math.floor(Math.random() * 5)+1 ;var df = a*a-b*b ;var c = df-a*b ; } 
+
+document.getElementById("test3p15Brandom").innerHTML = "Question  Find $f'(x)$ if $f(x) = x^{  "+(b).toString()+"} \\tan  "+(a).toString()+"x $<br><br>Product Rule: $\\dfrac{d}{dx}(f(x)g(x)) =f(x)g'(x)+f'(x)g(x) $  <br><br>Applied Product Rule: $(x^{  "+(b).toString()+"} )(  "+(a).toString()+"\\sec^{2}  "+(a).toString()+"x ) + (  "+(b).toString()+"x^{  "+(b-1).toString()+"})( \\tan  "+(a).toString()+"x )$ "  ;
+
+var math = document.getElementById("test3p15Brandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p10Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p10A ">  
+
+  <input type= "hidden" name="title", value=" Variable Base and Variable Exponent ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p10Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p10A ">  
+
+  <input type= "hidden" name="title", value=" Variable Base and Variable Exponent ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p10Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Variable Base and Variable Exponent <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Find the derivative of $x^{\cot9x}$<br><a onclick ="javascript:ShowHide('QPYtest3p10Ahint0')" href="javascript:;" >Step 1: Function and Inversion Technique  
+
+</a>
+
+<div class="mid" id="QPYtest3p10Ahint0" style="DISPLAY: none" >
+
+ $f(f^{-1})(x) = x$ use $e^{\ln x} = x$ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p10Ahint1')" href="javascript:;" >Step 2: Use technique on switch base 
+
+</a>
+
+<div class="mid" id="QPYtest3p10Ahint1" style="DISPLAY: none" >
+
+ $x^{\cos9x} = (e^{\ln x})^{\cot9x} =e^{\ln x \cot9x} $ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p10Ahint2')" href="javascript:;" >Step 3: Exponent Derivative with Chain Rule 
+
+</a>
+
+<div class="mid" id="QPYtest3p10Ahint2" style="DISPLAY: none" >
+
+ $\dfrac{d}{dx}(e^{\ln x \cot9x}) = (e^{\ln x \cot9x})(\ln x \cot9x)'$ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p10Ahint3')" href="javascript:;" >Step 4: Product Rule 
+
+</a>
+
+<div class="mid" id="QPYtest3p10Ahint3" style="DISPLAY: none" >
+
+ $(e^{\ln x \cot9x})(\ln x (-9\sin9x) + \dfrac{1}{x}(\cos9x))$ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p10Ahint4')" href="javascript:;" >Step 5: Simplify 
+
+</a>
+
+<div class="mid" id="QPYtest3p10Ahint4" style="DISPLAY: none" >
+
+ $(x^{\cot9x})(\ln x (-9\csc^{2}9x) + \dfrac{\cot9x }{x})$ 
+
+</div>
+
+</p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p18Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p18A ">  
+
+  <input type= "hidden" name="title", value=" Applying Derivative of Inverse Tangent ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p18Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p18A ">  
+
+  <input type= "hidden" name="title", value=" Applying Derivative of Inverse Tangent ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p18Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Applying Derivative of Inverse Tangent <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+A boat travels directly towards a 150 meter high skyscraper. An observer on the boat studies the angle from the boat to the top of the skyscraper.  What is the rate of change $\dfrac{d\theta}{dx}$ when the boat is  500 meters from the building?<br><a onclick ="javascript:ShowHide('QPYtest3p18Ahint0')" href="javascript:;" >Step 1: Create trigonometric relationship
+
+</a>
+
+<div class="mid" id="QPYtest3p18Ahint0" style="DISPLAY: none" >
+
+ Do not use 500, use x because it changes: $\tan \theta = \dfrac{150}{x}$ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p18Ahint1')" href="javascript:;" >Step 2: Solve for the angle
+
+</a>
+
+<div class="mid" id="QPYtest3p18Ahint1" style="DISPLAY: none" >
+
+ $\theta =\tan ^{-1}( \dfrac{150}{x})$  
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p18Ahint2')" href="javascript:;" >Step 3: Take the derivative
+
+</a>
+
+<div class="mid" id="QPYtest3p18Ahint2" style="DISPLAY: none" >
+
+  $\dfrac{d}{dx}(\theta =\tan ^{-1}( \dfrac{150}{x}))$ <br> <br> <br> 
+
+ $\dfrac{d \theta}{dx} = \dfrac{1}{1+( \dfrac{150}{x})^{2}} \cdot ( \dfrac{-150}{x^{2}})$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p18Ahint3')" href="javascript:;" >Step 4: Calculate with the data
+
+</a>
+
+<div class="mid" id="QPYtest3p18Ahint3" style="DISPLAY: none" >
+
+ $\dfrac{d \theta}{dx}= \dfrac{1}{1+( \dfrac{150}{ 500})^{2}} \cdot ( \dfrac{-150}{ 500^{2}})$ <br> <br> <br> 
+
+ $\dfrac{d \theta}{dx}= \dfrac{1}{1.09} \cdot (-0.0006)$ <br> <br> <br> 
+
+ $\dfrac{d \theta}{dx}=  -0.000550458715596$ <br> <br> <br> 
+
+</div>
+
+</p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p18Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p18A ">  
+
+  <input type= "hidden" name="title", value=" Applying Derivative of Inverse Tangent ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p18Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p18A ">  
+
+  <input type= "hidden" name="title", value=" Applying Derivative of Inverse Tangent ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p18Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Applying Derivative of Inverse Tangent <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p18Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p18Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p18A();" />
+
+<div class="mid" id="test3p18Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<br><a onclick ="javascript:ShowHide('test3p18Arandomans')" href="javascript:;" >See Solution Steps 
+
+</a><br>
+
+<div class="mid" id="test3p18Arandomans" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p18A()
+
+ function myFunctiontest3p18A() {var b = Math.floor(Math.random() * 100)+300 ; 
+
+var a =  Math.floor(Math.random() * 50)+75 ; 
+
+var c = a+ Math.floor(Math.random() * 3)+1 
+
+while(c<=0){var b = Math.floor(Math.random() * 10)+1 ; var a = b+Math.floor(Math.random() * 5)+1 ;var df = a*a-b*b ;var c = df-a*b ; } 
+
+document.getElementById("test3p18Arandom").innerHTML = "Question   <br>A boat travels directly towards a  "+(b ).toString()+" meter high skyscraper. An observer on the boat studies the angle from the boat to the top of the skyscraper.  What is the rate of change $\\dfrac{d\\theta}{dx}$ when the boat is   "+(a ).toString()+" meters from the building?"  ;
+
+var math = document.getElementById("test3p18Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+document.getElementById("test3p18Arandomans").innerHTML = "Answer  <br><br> Step 1: $\\tan \\theta = \\dfrac{ "+(b ).toString()+"}{x}$  <br><br> Step 2: $\\theta =\\tan ^{-1}( \\dfrac{ "+(b ).toString()+"}{x})$  <br><br> Step 3: $\\dfrac{d}{dx}(\\theta =\\tan ^{-1}( \\dfrac{ "+(b ).toString()+"}{x}))$  <br><br> Step 4: $\\dfrac{d \\theta}{dx} = \\dfrac{1}{1+( \\dfrac{ "+(b ).toString()+"}{x})^{2}} \\cdot ( \\dfrac{- "+(b ).toString()+"}{x^{2}})$ <br><br> Step 5:  $\\dfrac{d \\theta}{dx}= \\dfrac{1}{1+( \\dfrac{ "+(b ).toString()+"}{  "+(a ).toString()+"})^{2}} \\cdot ( \\dfrac{- "+(b ).toString()+"}{  "+(a ).toString()+"^{2}})$  <br><br> Step 6:  $\\dfrac{d \\theta}{dx}=     "+(1/(1+(b/a)*(b/a ))).toFixed(6).toString()+"  \\cdot  "+(-b /(a*a )).toFixed(6).toString()+" $ <br><br> Step 7:  $\\dfrac{d \\theta}{dx}=     "+((1/(1+(b/a)*(b/a ))) *(-b /(a*a ))).toFixed(6).toString()+" $ "  ;
+
+var math2 = document.getElementById("test3p18Arandomans");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math2]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p19Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p19A ">  
+
+  <input type= "hidden" name="title", value=" Average and Marginal Cost ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p19Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p19A ">  
+
+  <input type= "hidden" name="title", value=" Average and Marginal Cost ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p19Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Average and Marginal Cost <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Use the cost function $C(x) = -0.07x^{2} + 341x + 768$ to find $\bar{C}(x)$ and $C'(x)$ then evaluate when $x =277 $<br><a onclick ="javascript:ShowHide('QPYtest3p19Ahint0')" href="javascript:;" >Step 1: Average Cost Function  
+
+</a>
+
+<div class="mid" id="QPYtest3p19Ahint0" style="DISPLAY: none" >
+
+ $\bar{C}(x) = \dfrac{C(x)}{x}= -0.07x+ 341 + \dfrac{768}{x}$ <br> <br> <br> 
+
+ $\bar{C}(277) = -0.07(277)+ 341 + \dfrac{768}{277}$ <br> <br> <br> 
+
+ $-19.39+ 341 + 2.7725631769$ <br> <br> <br> 
+
+ $324.382563177$ dollars is about the cost per item to produce 277 items  <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p19Ahint1')" href="javascript:;" >Step 2: Marginal Cost Function 
+
+</a>
+
+<div class="mid" id="QPYtest3p19Ahint1" style="DISPLAY: none" >
+
+ $C'(x) = -0.14x + 341 $ <br> <br> <br> 
+
+ $C'(277) =  -0.14(277) + 341 $ <br> <br> <br> 
+
+ $ =  -38.78 + 341 $ <br> <br> <br> 
+
+ $ =  302.22$ dollars is cost to produce item number $278 $ <br> <br> <br> 
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Average and Marginal Cost Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p19Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p19Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p19A();" />
+
+<div class="mid" id="test3p19Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<br><a onclick ="javascript:ShowHide('test3p19Arandomans')" href="javascript:;" >See Solution Steps 
+
+</a><br>
+
+<div class="mid" id="test3p19Arandomans" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p19A()
+
+ function myFunctiontest3p19A() {var b = (Math.floor(Math.random() * 100)*0.001).toFixed(3) ; 
+
+var a =  (Math.floor(Math.random() * 100)* 4) ; 
+
+var c =   a+ (Math.floor(Math.random() * 100)*8) ; 
+
+var d =  50+ Math.floor(Math.random() * 100) ; 
+
+document.getElementById("test3p19Arandom").innerHTML = "Question <br>Use the cost function $C(x) = -"+(b ).toString()+"x^{2} +  "+(a ).toString()+"x +  "+(c ).toString()+"$ to find $\\bar{C}(x)$ and $C'(x)$ then evaluate when $x = "+(d ).toString()+" $   <br>"  ;
+
+var math = document.getElementById("test3p19Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+document.getElementById("test3p19Arandomans").innerHTML = "Answer  <br><br> Step 1:    $\\bar{C}(x)=  \\dfrac{-"+(b ).toString()+"x^{2} +  "+(a ).toString()+"x +  "+(c ).toString()+"}{x}$  <br><br> Step 2:    $\\bar{C}(x)=  -"+(b ).toString()+"x  +  "+(a ).toString()+"  +  \\dfrac{"+(c ).toString()+"}{x}$  <br><br> Step 3:    $\\bar{C}( "+(d ).toString()+" )=  -"+(b ).toString()+"("+(d ).toString()+" )  +  "+(a ).toString()+"  +  \\dfrac{"+(c ).toString()+"}{"+(d ).toString()+" }$  <br><br> Step 4:    $\\bar{C}( "+(d ).toString()+" )= -"+(b *d ).toFixed(3).toString()+"  +  "+(a ).toString()+" + "+(c/d ).toFixed(3).toString()+"$<br><br> Step 5:    $\\bar{C}( "+(d ).toString()+" )=   "+(a-(b *d )+(c/d )).toFixed(3).toString()+"  $ is the average cost per item in dollars to produce "+(d ).toString()+" items <br><br> Step 6: $C'(x) = -"+(b *2).toString()+"x +  "+(a ).toString()+" $ <br><br> Step 7: $C'( "+(d ).toString()+") = -"+(b *2).toString()+"("+(d ).toString()+") +  "+(a ).toString()+" $ <br><br> Step 8: $C'( "+(d ).toString()+") = -"+(b *2*d).toString()+"  +  "+(a ).toString()+" $ <br><br> Step 9: $C'( "+(d ).toString()+") =  "+(a-(b *2*d) ).toString()+" $ is the number of dollars to produce one more item, item number "+(d+1 ).toString()+" "  ;
+
+var math2 = document.getElementById("test3p19Arandomans");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math2]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p20Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p20A ">  
+
+  <input type= "hidden" name="title", value=" Implicit Differentiation ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p20Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p20A ">  
+
+  <input type= "hidden" name="title", value=" Implicit Differentiation ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p20Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Implicit Differentiation <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Find $\dfrac{dy}{dx}$ using the equation $16x^{2}+4y^{5}=14$<br><a onclick ="javascript:ShowHide('QPYtest3p20Ahint0')" href="javascript:;" >Step 1: Take derivative of both sides of equation  
+
+</a>
+
+<div class="mid" id="QPYtest3p20Ahint0" style="DISPLAY: none" >
+
+ $\dfrac{d}{dx}(16x^{2}+4y^{5})=\dfrac{d}{dx}(14)$ <br> <br> <br> 
+
+ $16(2)x^{1}+4(5)y^{4}\dfrac{dy}{dx}=0$   <br> <br> <br> 
+
+ $32x^{1}+20y^{4}\dfrac{dy}{dx}=0$   <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p20Ahint1')" href="javascript:;" >Step 2: Solve for $\dfrac{dy}{dx}$ 
+
+</a>
+
+<div class="mid" id="QPYtest3p20Ahint1" style="DISPLAY: none" >
+
+  $20y^{4}\dfrac{dy}{dx}=-32x^{1}$  <br> <br> <br> 
+
+  $\dfrac{dy}{dx}=\dfrac{-32x^{1}}{20y^{4}}$  <br> <br> <br> 
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Implicit Differentiation Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p20Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p20Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p20A();" />
+
+<div class="mid" id="test3p20Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<br><a onclick ="javascript:ShowHide('test3p20Arandomans')" href="javascript:;" >See Solution Steps 
+
+</a><br>
+
+<div class="mid" id="test3p20Arandomans" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p20A()
+
+ function myFunctiontest3p20A() {var b = Math.floor(Math.random() * 20)+3 ; 
+
+var a = b* Math.floor(Math.random() * 10) ; 
+
+var c =   b+ Math.floor(Math.random() * 10) ;   
+
+var d = b+1+ Math.floor(Math.random() * 10) ; 
+
+var e =   d+1+ Math.floor(Math.random() * 10) ;   
+
+document.getElementById("test3p20Arandom").innerHTML = "Question <br>  Find $\dfrac{dy}{dx}$ using the equation $ "+(a ).toString()+"x^{ "+(b).toString()+"}+ "+(c).toString()+"y^{ "+(d).toString()+"}= "+(e).toString()+"$<br>"  ;
+
+var math = document.getElementById("test3p20Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+document.getElementById("test3p20Arandomans").innerHTML = "Answer  <br><br> Step 1:  $ \\dfrac{d}{dx}("+(a ).toString()+"x^{ "+(b).toString()+"}+ "+(c).toString()+"y^{ "+(d).toString()+"}= "+(e).toString()+")   $   <br><br> Step 2: $    "+(a*b ).toString()+"x^{ "+(b-1).toString()+"}+ "+(c*d).toString()+"y^{ "+(d-1).toString()+"}\\dfrac{dy}{dx}= 0   $   <br><br> Step 3: $   + "+(c*d).toString()+"y^{ "+(d-1).toString()+"}\\dfrac{dy}{dx}= - "+(a*b ).toString()+"x^{ "+(b-1).toString()+"}   $   <br><br> Step 4: $    \\dfrac{dy}{dx}= \\dfrac{- "+(a*b ).toString()+"x^{ "+(b-1).toString()+"} }{"+(c*d).toString()+"y^{ "+(d-1).toString()+"}}  $   "  ;
+
+var math2 = document.getElementById("test3p20Arandomans");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math2]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p21Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p21A ">  
+
+  <input type= "hidden" name="title", value=" Non-Zero Horizontal Asymptotes For Rational Functions ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p21Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p21A ">  
+
+  <input type= "hidden" name="title", value=" Non-Zero Horizontal Asymptotes For Rational Functions ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p21Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Non-Zero Horizontal Asymptotes For Rational Functions <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Calculate $\lim\limits_{x\rightarrow \infty}\dfrac{60x^{38}-21x^{43}+49x^{37}}{29x^{38}-30x^{37}+43x^{43}}$ <br><br>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p21Ahint0')" href="javascript:;" >Step 1: Determine if function is rational  
+
+</a>
+
+<div class="mid" id="QPYtest3p21Ahint0" style="DISPLAY: none" >
+
+ All powers are integers, it is rational    
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p21Ahint1')" href="javascript:;" >Step 2: Determine which part of fraction has higher power, of if they are the same  
+
+</a>
+
+<div class="mid" id="QPYtest3p21Ahint1" style="DISPLAY: none" >
+
+ Reduce by highest exponent $\lim\limits_{x\rightarrow \infty}\dfrac{60\dfrac{x^{38}}{x^{43}}-21+49\dfrac{x^{37}}{x^{43}}}{29\dfrac{x^{38}}{x^{43}}-30\dfrac{x^{37}}{x^{43}}+43 }  $   
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p21Ahint2')" href="javascript:;" >Step 3: Decide what end behavior the limit has  </a>
+
+<div class="mid" id="QPYtest3p21Ahint2" style="DISPLAY: none" >
+
+ Keep Constants: $\lim\limits_{x\rightarrow \infty}\dfrac{-21}{43 } =  \dfrac{-21}{43 } $ 
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Non-Zero Horizontal Asymptotes For Rational Functions Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p21Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p21Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p21A();" />
+
+<div class="mid" id="test3p21Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<br><a onclick ="javascript:ShowHide('test3p21Arandomans')" href="javascript:;" >See Solution Steps 
+
+</a><br>
+
+<div class="mid" id="test3p21Arandomans" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p21A()
+
+ function myFunctiontest3p21A() {var b = Math.floor(Math.random() * 20)+2 ; 
+
+var a = b* Math.floor(Math.random() * 10) ; 
+
+var c =   b+ Math.floor(Math.random() * 10) ;   
+
+var d = c+1+ Math.floor(Math.random() * 10) ; 
+
+var e =   d+1+ Math.floor(Math.random() * 10) ;   
+
+document.getElementById("test3p21Arandom").innerHTML = "Question <br>Calculate $\\lim\\limits_{x\\rightarrow \\infty}\\dfrac{"+a.toString()+"x^{"+c.toString()+" }-"+(a-1).toString()+"x^{"+d.toString()+"}+"+(a+1).toString()+"x^{"+e.toString()+"}}{"+(a+1).toString()+"x^{"+d.toString()+"}-"+(a-2).toString()+"x^{"+e.toString()+"}+"+(a-3).toString()+"x^{"+c.toString()+"}}$ <br>"  ;
+
+var math = document.getElementById("test3p21Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+document.getElementById("test3p21Arandomans").innerHTML = "Answer  <br><br> Step 1: $\\lim\\limits_{x\\rightarrow \\infty}\\dfrac{"+(a+1).toString()+"+\\dfrac{"+a.toString()+"x^{"+c.toString()+" }}{x^{"+e.toString()+"}}-\\dfrac{"+(a-1).toString()+"x^{"+d.toString()+"}}{x^{"+e.toString()+"}} }{-"+(a-2).toString()+"-\\dfrac{"+(a+1).toString()+"x^{"+d.toString()+"}}{x^{"+e.toString()+"}}+\\dfrac{"+(a-3).toString()+"x^{"+c.toString()+"}}{x^{"+e.toString()+"}} } <br>$   <br><br> Step 2: $\\lim\\limits_{x\\rightarrow \\infty}\\dfrac{"+(a+1).toString()+" }{-"+(a-2).toString()+" }= \\dfrac{"+(a+1).toString()+" }{-"+(a-2).toString()+" }<br>$   "  ;
+
+var math2 = document.getElementById("test3p21Arandomans");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math2]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p22Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p22A ">  
+
+  <input type= "hidden" name="title", value=" Function Graph from Derivative ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p22Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p22A ">  
+
+  <input type= "hidden" name="title", value=" Function Graph from Derivative ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p22Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Function Graph from Derivative <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+ The graph of a derivative is shown, use it to find the: \\ 
+
+Function interval of increasing \\ 
+
+Function interval of decreasing \\ 
+
+Function's critical values \\ 
+
+Function interval of concave up  \\ 
+
+Function interval of concave down \\ 
+
+Function's points of inflection \\ 
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p22Ahint0')" href="javascript:;" >Step 1: Increasing Interval 
+
+</a>
+
+<div class="mid" id="QPYtest3p22Ahint0" style="DISPLAY: none" >
+
+ When the derivative is positive the function is increasing on $(-5,3)$ 
+
+ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p22Ahint1')" href="javascript:;" >Step 2: Decreasing Interval 
+
+</a>
+
+<div class="mid" id="QPYtest3p22Ahint1" style="DISPLAY: none" >
+
+ When the derivative is negative the function is decreasing on $(3,5)$ 
+
+ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p22Ahint2')" href="javascript:;" >Step 3: Critical Values  
+
+</a>
+
+<div class="mid" id="QPYtest3p22Ahint2" style="DISPLAY: none" >
+
+ Critical Values are when the deritive is zero $x=3$ 
+
+ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p22Ahint3')" href="javascript:;" >Step 4: Concave Up Interval  
+
+</a>
+
+<div class="mid" id="QPYtest3p22Ahint3" style="DISPLAY: none" >
+
+ When the derivative is increasing the function is concave up $(-3,0)$ 
+
+ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p22Ahint4')" href="javascript:;" >Step 5: Concave Down Interval  
+
+</a>
+
+<div class="mid" id="QPYtest3p22Ahint4" style="DISPLAY: none" >
+
+ When the derivative is decreasing the function is concave down $(-5,-3)$ and $(0,5)$ 
+
+ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p22Ahint5')" href="javascript:;" >Step 6: Inflection Points  
+
+</a>
+
+<div class="mid" id="QPYtest3p22Ahint5" style="DISPLAY: none" >
+
+ Points of inflection occur when the derivative changes from increasing to decreasing or decreasing to increasing $x=-3$ and $x=0$ 
+
+ 
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Function Graph from Derivative Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p22Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p22Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p22A(rboard);" />
+
+<div class="mid" id="test3p22Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<div id="box3test3p22Arandomans" class="jxgbox" style="width:300px; height:300px;"></div><br><a onclick ="javascript:ShowHide('test3p22Arandomans')" href="javascript:;" >See Solution Steps 
+
+</a><br>
+
+<div class="mid" id="test3p22Arandomans" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+var rboard = JXG.JSXGraph.initBoard('box3test3p22Arandomans', {boundingbox: [-9, 9, 9, -9] , grid: true,  axis: true  });myFunctiontest3p22A(rboard)
+
+ function myFunctiontest3p22A(tgraph) {var sAB =Math.floor(Math.random() * 3)-5 ; 
+
+var sBC =Math.floor(Math.random() * 3)+2 ; 
+
+var sCD =Math.floor(Math.random() * 2)-4 ; 
+
+var Ax  = Math.floor(Math.random() * 3)-7 ; 
+
+var Bx  = Ax+Math.abs(sAB); 
+
+var Cx  =   Bx+Math.abs(sBC); 
+
+var Dx  =  Cx+Math.abs(sCD) ; 
+
+var Ex  =  Dx+ Math.floor(Math.random() * 2)+1 ; 
+
+var Ay =  Math.floor(Math.random() * 4)+3 ; 
+
+var By = Ay+sAB; 
+
+ var Cy =   By+sBC; 
+
+var Dy =    0; 
+
+var Ey =  Dx +Math.floor(Math.random() * 3)-7 ; 
+
+while((Cy==Ey) || (Dy==Ey) || (By<=0)){var sAB =Math.floor(Math.random() * 3)-5 ;  var sBC =Math.floor(Math.random() * 3)+2 ;  var sCD =Math.floor(Math.random() * 2)-4 ;  var Ax  = Math.floor(Math.random() * 3)-7 ;  var Bx  = Ax+Math.abs(sAB);  var Cx  =   Bx+Math.abs(sBC);  var Dx  =  Cx+Math.abs(sCD) ;  var Ex  =  Dx+ Math.floor(Math.random() * 2)+1 ;  var Ay =  Math.floor(Math.random() * 4)+3 ;  var By = Ay+sAB;   var Cy =   By+sBC;  var Dy =    0;  var Ey =  Dx +Math.floor(Math.random() * 3)-7 ;                      } 
+
+thegraph = JXG.JSXGraph.initBoard('box3test3p22Arandomans',  {boundingbox: [ -8, 8, 8, -8] , grid: true,  axis: true  });
+
+var A = thegraph.create('point', [ Ax ,Ay ],{size:4,withLabel:true});var B = thegraph.create('point', [  Bx ,By ],{size:4,withLabel:true});var C = thegraph.create('point', [  Cx ,Cy ],{size:4,withLabel:true});var D = thegraph.create('point', [   Dx ,Dy ],{size:4,withLabel:true});var E = thegraph.create('point', [   Ex ,Ey ],{size:4,withLabel:true});var v1 = thegraph.create('line', [A,B],{straightFirst:false, straightLast:false,strokeColor:'black',strokeWidth:1});var v4 = thegraph.create('line', [B,C],{straightFirst:false, straightLast:false,strokeColor:'black',strokeWidth:1});var v3 = thegraph.create('line', [C,D],{straightFirst:false, straightLast:false,strokeColor:'black',strokeWidth:1});var v2 = thegraph.create('line', [D,E],{straightFirst:false, straightLast:false,strokeColor:'black',strokeWidth:1});document.getElementById("test3p22Arandomans").innerHTML = "<br>    Step 1: Increasing Interval $("+Ax.toString()+","+Dx.toString()+")$<br>Step 2: Decreasing Interval $("+Dx.toString()+","+Ex.toString()+")$<br>Step 3: Critical Values $x="+Dx.toString()+" $ <br>Step 4: Concave Up Interval  $("+Bx.toString()+","+Cx.toString()+")$<br>Step 5: Concave Down Interval  $("+Ax.toString()+","+Bx.toString()+")$ and $("+Cx.toString()+","+Ex.toString()+")$<br>Step 6: Inflection Points   $x="+Bx.toString()+" $<br>"  ;
+
+var math2 = document.getElementById("test3p22Arandomans");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math2]);
+
+document.getElementById("test3p22Arandom").innerHTML = "Question  <br>  The graph of a derivative is shown, use it to find the: <br>Function interval of increasing  <br>Function interval of decreasing <br>Function's critical values <br>Function interval of concave up <br>Function interval of concave down <br>Function's points of inflection <br>"  ;
+
+var math = document.getElementById("test3p22Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p23Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p23A ">  
+
+  <input type= "hidden" name="title", value=" Optimization ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p23Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p23A ">  
+
+  <input type= "hidden" name="title", value=" Optimization ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p23Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Optimization <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+Optimize the sides of rectangle for the smallest perimeter, if the area of the rectangle must equal 9. <br><a onclick ="javascript:ShowHide('QPYtest3p23Ahint0')" href="javascript:;" >Step 1: Identify Constraint and Objective
+
+</a>
+
+<div class="mid" id="QPYtest3p23Ahint0" style="DISPLAY: none" >
+
+ Constraint: $xy=9$ <br> <br> <br> 
+
+ Constraint: $y=\dfrac{9}{x}$ <br> <br> <br> 
+
+ Objective: $P=2x+2y$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p23Ahint1')" href="javascript:;" >Step 2: Rewrite Objective Equation using Constraint 
+
+</a>
+
+<div class="mid" id="QPYtest3p23Ahint1" style="DISPLAY: none" >
+
+  Objective: $P=2x+2(\dfrac{9}{x})$ <br> <br> <br> 
+
+ $P=2x+\dfrac{18}{x}$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p23Ahint2')" href="javascript:;" >Step 3: Set P' equal to 0 and solve.
+
+</a>
+
+<div class="mid" id="QPYtest3p23Ahint2" style="DISPLAY: none" >
+
+ $P' = 2 +\dfrac{-18}{x^{2}}$  <br> <br> <br> 
+
+ $2 +\dfrac{-18}{x^{2}}=0$ <br> <br> <br> 
+
+ $2  = \dfrac{18}{x^{2}}$ <br> <br> <br> 
+
+ $2x^{2}=18$ <br> <br> <br> 
+
+ $x^{2}=9$ <br> <br> <br> 
+
+ At $x=3$  <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p23Ahint3')" href="javascript:;" >Step 4: State the Optimal Sides.
+
+</a>
+
+<div class="mid" id="QPYtest3p23Ahint3" style="DISPLAY: none" >
+
+ Optimal Sides are $x=3$ and $y=\dfrac{9}{3}$  
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Optimization Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p23Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p23Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p23A();" />
+
+<div class="mid" id="test3p23Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p23A()
+
+ function myFunctiontest3p23A() {var a1= Math.floor((Math.random() * 15) + 1); 
+
+var a2= a1*a1; 
+
+var a3= Math.floor((Math.random() * 50) + 15); 
+
+while (a3%2==0){var a3= Math.floor((Math.random() * 50) + 1);}var a4= Math.floor((Math.random() * 50) + 1); 
+
+var a5= Math.floor((Math.random() * 50) + 1); 
+
+var c = a1+a2;
+
+document.getElementById("test3p23Arandom").innerHTML = "Question Optimize the sides of rectangle for the smallest perimeter, if the area of the rectangle must equal "+(a2).toString()+".  <br><br> Constraint: $xy="+(a2).toString()+"$ <br><br> Solve area in terms of x: $y=\\dfrac{"+(a2).toString()+"}{x}$ <br><br> Perimeter $P= 2x+2y $  <br><br> Perimeter $P= 2x+2(\\dfrac{"+(a2).toString()+"}{x}) $  <br><br> Derivative of Perimeter: $P'= 2-\\dfrac{"+(2*a2).toString()+"}{x^{2}} $  <br><br> Optimize Perimeter Derivative: $0= 2-\\dfrac{"+(2*a2).toString()+"}{x^{2}} $  <br><br> $ 2x^{2} = "+(2*a2).toString()+" $ <br><br> $ x^{2} = "+(a2).toString()+" $ <br><br> $ x = "+(a1).toString()+" $ <br><br> Optimal Sides $ x = "+(a1).toString()+" $ and $ y= \\dfrac{"+(a2).toString()+"}{"+(a1).toString()+"} $ "  ;
+
+var math = document.getElementById("test3p23Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p24Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p24A ">  
+
+  <input type= "hidden" name="title", value=" Application of Derivative ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p24Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p24A ">  
+
+  <input type= "hidden" name="title", value=" Application of Derivative ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p24Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Application of Derivative <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+A projectile is fired from a cannon.  The position of a projectile above the ground is defined by the function <br>$ s(t) = -3t^{2} +6t+45$ <br> s is measured in meters and t is measured in seconds.  Find the time it takes the projectile to hit the ground.  Find the speed the projectile hits the ground. <br><a onclick ="javascript:ShowHide('QPYtest3p24Ahint0')" href="javascript:;" >Step 1: Set Equal to Zero And Solve 
+
+</a>
+
+<div class="mid" id="QPYtest3p24Ahint0" style="DISPLAY: none" >
+
+ $-3t^{2} +6t+45=0$ <br> <br> <br> 
+
+  $-3(t^{2} -2t-15)=0$  <br> <br> <br> 
+
+  $-3(t-5)(t+3)=0$  <br> <br> <br> 
+
+  $t  = 5$ and $t=-3$  <br> <br> <br> 
+
+  Projectile Hits ground at  $t  = 5$ seconds  <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p24Ahint1')" href="javascript:;" >Step 2: Take Derivative to get velocity function 
+
+</a>
+
+<div class="mid" id="QPYtest3p24Ahint1" style="DISPLAY: none" >
+
+ $ s(t) = -3t^{2} +6t+45$  <br> <br> <br> 
+
+ $v(t) = -6t +6   $ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p24Ahint2')" href="javascript:;" >Step 3: Calculate velocity with answer to step 1 
+
+</a>
+
+<div class="mid" id="QPYtest3p24Ahint2" style="DISPLAY: none" >
+
+ $ v(5) = -6(5) +6 = -24 $ <br> <br> <br> 
+
+ At $t=5$ the velocity of the projectile is -24 meters per second <br> <br> <br> 
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Application of Derivative Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p24Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p24Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p24A();" />
+
+<div class="mid" id="test3p24Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p24A()
+
+ function myFunctiontest3p24A() {var a1= Math.floor((Math.random() * 10) + 1); 
+
+var a2= a1+Math.floor((Math.random() * 5) + 1); 
+
+var a3= Math.floor((Math.random() * 10) + 1); 
+
+var c = a1+a2;
+
+document.getElementById("test3p24Arandom").innerHTML = "Question  A projectile is fired from a cannon.  The position of th projectile above the ground is defined by the function <br><br>  $ s(t) = -"+(a3).toString()+"t^{2} +"+(a3*(a2-a1)).toString()+"t+"+(a1*a2*a3).toString()+"$ <br> s is measured in meters and t is measured in seconds.  Find the time it takes the projectile to hit the ground.  Find the speed of the projectile when it hits the ground.<br><br>  Time when projectile hits ground $s(t)=0$<br><br>  Factor $-"+(a3).toString()+"(t^{2} +"+((a2-a1)).toString()+"t+"+(a1*a2).toString()+")=0$<br><br>  Factor $-"+(a3).toString()+"(t+"+(a2).toString()+")(t-"+(a1).toString()+")=0$<br><br>  Solution $x="+(a1).toString()+"$ seconds<br><br>  Velocity Function $v(t) = -"+(a3*2).toString()+"t +"+(a3*(a2-a1)).toString()+"$<br><br>  Velocity when hitting ground $v("+(a1).toString()+") = -"+(a3*2).toString()+"("+(a1).toString()+") +"+(a3*(a2-a1)).toString()+"="+(a3*(a2-a1)-a3*2*a1).toString()+" $ meters per second"  ;
+
+var math = document.getElementById("test3p24Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p25Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p25A ">  
+
+  <input type= "hidden" name="title", value=" Application of Derivative ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p25Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p25A ">  
+
+  <input type= "hidden" name="title", value=" Application of Derivative ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p25Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Application of Derivative <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+A projectile is fired from a cannon.  The position of the projectile above the ground is defined by the function <br>$ s(t) = -6t^{2} +36t+42$ <br> s is measured in meters and t is measured in seconds.  Find the when the projectile has zero velocity.  Find the position of the projectile when it has zero velocity. <br><a onclick ="javascript:ShowHide('QPYtest3p25Ahint0')" href="javascript:;" >Step 1: Take Derivative to get velocity function 
+
+</a>
+
+<div class="mid" id="QPYtest3p25Ahint0" style="DISPLAY: none" >
+
+ $ s(t) = -6t^{2} +36t+42$  <br> <br> <br> 
+
+ $v(t) = -12t +36   $ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p25Ahint1')" href="javascript:;" >Step 2: Set velocity equal to zero and solve for t 
+
+</a>
+
+<div class="mid" id="QPYtest3p25Ahint1" style="DISPLAY: none" >
+
+ $ -12t +36 = 0$ <br> <br> <br> 
+
+ $t=\dfrac{-36}{-12}=3.0$  <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p25Ahint2')" href="javascript:;" >Step 3: Calculate the position using the solution 
+
+</a>
+
+<div class="mid" id="QPYtest3p25Ahint2" style="DISPLAY: none" >
+
+ $s(3.0) = -6(9.0) +36(3.0)+42 $ <br> <br> <br> 
+
+  $s(3.0) = (-54.0) +108.0+42 $  <br> <br> <br> 
+
+  $s(3.0) = 96.0 $  <br> <br> <br> 
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Application of Derivative Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p25Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p25Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p25A();" />
+
+<div class="mid" id="test3p25Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p25A()
+
+ function myFunctiontest3p25A() {var a1= Math.floor((Math.random() * 10) + 1); 
+
+var a2= a1+Math.floor((Math.random() * 5) + 1); 
+
+var a3= Math.floor((Math.random() * 10) + 1); 
+
+var c = a1+a2;
+
+var ts = a3*(a2-a1)/(a3*2);
+
+document.getElementById("test3p25Arandom").innerHTML = "Question  A projectile is fired from a cannon.  The position of the projectile above the ground is defined by the function <br><br>  $ s(t) = -"+(a3).toString()+"t^{2} +"+(a3*(a2-a1)).toString()+"t+"+(a1*a2*a3).toString()+"$ <br> s is measured in meters and t is measured in seconds.  .<br><br>  Calculate the velocity  function and solve the equation $v(t)=0$<br><br>  $ v(t) = -"+(a3*2).toString()+"t +"+(a3*(a2-a1)).toString()+"$ <br><br>  $  -"+(a3*2).toString()+"t +"+(a3*(a2-a1)).toString()+" = 0$ <br><br>  $  t  = \\dfrac{-"+(a3*(a2-a1)).toString()+"}{-"+(a3*2).toString()+"}$ <br><br>  $  t  = "+(a3*(a2-a1)/(a3*2)).toString()+"   $ <br><br>  Find the position of the projectile when the velocity is zero.<br><br>  $ s("+(ts).toString()+") = -"+(a3).toString()+"("+(ts).toString()+")^{2} +"+(a3*(a2-a1)).toString()+"("+(ts).toString()+")+"+(a1*a2*a3).toString()+"$<br><br>  $ s("+(ts).toString()+") = "+(-a3*ts*ts).toString()+"  +"+(a3*(a2-a1)*(ts)).toString()+" +"+(a1*a2*a3).toString()+"$ <br><br>  $ s("+(ts).toString()+") =  "+((-a3*ts*ts)+(a3*(a2-a1)*(ts))+(a1*a2*a3)).toString()+" $ "  ;
+
+var math = document.getElementById("test3p25Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p26Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p26A ">  
+
+  <input type= "hidden" name="title", value=" Proximity Question ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p26Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p26A ">  
+
+  <input type= "hidden" name="title", value=" Proximity Question ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p26Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Proximity Question <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+What point on the line $y=7x+100$ is closest to the origin.
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p26Ahint0')" href="javascript:;" >Step 1: Set up distance formula  
+
+</a>
+
+<div class="mid" id="QPYtest3p26Ahint0" style="DISPLAY: none" >
+
+ $d^{2} = (x-0)^{2}+(7x+100-0)^{2}$  <br> <br> <br> 
+
+ $d^{2} = x^{2}+49x^{2}+1400x+10000$  <br> <br> <br> 
+
+ $d^{2} =  50x^{2}+1400x+10000$  <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p26Ahint1')" href="javascript:;" >Step 2: Take derivative 
+
+</a>
+
+<div class="mid" id="QPYtest3p26Ahint1" style="DISPLAY: none" >
+
+ $2d d' =  100x +1400  $  
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p26Ahint2')" href="javascript:;" >Step 3: Solve optimal equation to find the x coordinate 
+
+ </a>
+
+<div class="mid" id="QPYtest3p26Ahint2" style="DISPLAY: none" >
+
+ $ 100x +1400  = 0 $ <br> <br> <br> 
+
+ $ x = \dfrac{-1400 }{100} = 14$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p26Ahint3')" href="javascript:;" >Step 4: Use the line to find the y coordinate 
+
+ </a>
+
+<div class="mid" id="QPYtest3p26Ahint3" style="DISPLAY: none" >
+
+  $y=7x+100 = 7(14)+100=198 $  
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Proximity Question Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p26Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p26Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p26A();" />
+
+<div class="mid" id="test3p26Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<br><a onclick ="javascript:ShowHide('test3p26Arandomans')" href="javascript:;" >See Solution Steps 
+
+</a><br>
+
+<div class="mid" id="test3p26Arandomans" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p26A()
+
+ function myFunctiontest3p26A() {var b = Math.floor(Math.random() * 20)+2 ; 
+
+var a = b* Math.floor(Math.random() * 10) ; 
+
+var c =   b+ Math.floor(Math.random() * 10) ;   
+
+var d = c+1+ Math.floor(Math.random() * 10) ; 
+
+var e =   d+1+ Math.floor(Math.random() * 10) ;   
+
+document.getElementById("test3p26Arandom").innerHTML = "Question <br>Calculate $\\lim\\limits_{x\\rightarrow \\infty}\\dfrac{"+a.toString()+"x^{"+c.toString()+" }-"+(a-1).toString()+"x^{"+d.toString()+"}+"+(a+1).toString()+"x^{"+e.toString()+"}}{"+(a+1).toString()+"x^{"+d.toString()+"}-"+(a-2).toString()+"x^{"+e.toString()+"}+"+(a-3).toString()+"x^{"+c.toString()+"}}$ <br>"  ;
+
+var math = document.getElementById("test3p26Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+document.getElementById("test3p26Arandomans").innerHTML = "Answer  <br><br> Step 1: $\\lim\\limits_{x\\rightarrow \\infty}\\dfrac{"+(a+1).toString()+"+\\dfrac{"+a.toString()+"x^{"+c.toString()+" }}{x^{"+e.toString()+"}}-\\dfrac{"+(a-1).toString()+"x^{"+d.toString()+"}}{x^{"+e.toString()+"}} }{-"+(a-2).toString()+"-\\dfrac{"+(a+1).toString()+"x^{"+d.toString()+"}}{x^{"+e.toString()+"}}+\\dfrac{"+(a-3).toString()+"x^{"+c.toString()+"}}{x^{"+e.toString()+"}} } <br>$   <br><br> Step 2: $\\lim\\limits_{x\\rightarrow \\infty}\\dfrac{"+(a+1).toString()+" }{-"+(a-2).toString()+" }= \\dfrac{"+(a+1).toString()+" }{-"+(a-2).toString()+" }<br>$   "  ;
+
+var math2 = document.getElementById("test3p26Arandomans");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math2]);
+
+}</script></p>
+
+<form style="width: 300px" action="vote.php" method="post" target="test3p27Aout"> 
+
+  <input type="radio" name="rating" value="1" > Too Easy<br>
+
+  <input type="radio" name="rating" value="2"> Just Right<br>
+
+  <input type="radio" name="rating" value="3"> Too Challenging <br>
+
+  <input type= "hidden" name="problem", value=" test3p27A ">  
+
+  <input type= "hidden" name="title", value=" Optimizing Area ">  
+
+ <input type="submit" value="Vote">
+
+</form>
+
+<form style="width: 300px" action="update.php" method="post" target="test3p27Aout"> 
+
+  <input type= "hidden" name="problem", value=" test3p27A ">  
+
+  <input type= "hidden" name="title", value=" Optimizing Area ">  
+
+ <input type="submit" value="Update">
+
+</form>
+
+<iframe name="test3p27Aout"  width="300" height="150">
+
+</iframe>
+
+<h1 style="text-align:center"> Optimizing Area <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+A rectangular flower garden with an area of 8192m$^{2}$ is surrounded by a grass border 8 m wide on two sides and 16 m wide on the other two sides.  What dimensions of the the garden minimize the combined area of the garden and borders? 
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p27Ahint0')" href="javascript:;" >Step 1: Create equation for area of flower garden, solve it for a variable 
+
+</a>
+
+<div class="mid" id="QPYtest3p27Ahint0" style="DISPLAY: none" >
+
+ Flower garden dimensions are $x$ and $y$: $xy=8192$ <br> <br> <br> 
+
+ $y = \dfrac{8192}{x}$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p27Ahint1')" href="javascript:;" >Step 2: Set equation for area of flower graden plus grass border 
+
+</a>
+
+<div class="mid" id="QPYtest3p27Ahint1" style="DISPLAY: none" >
+
+ Dimensions or combined garden and grass border are $x+16$ and $y+ 32$  <br> <br> <br> 
+
+ $A = (y+32)(x+16)$ <br> <br> <br> 
+
+ Substitute in y in terms of x: $A = ( \dfrac{8192}{x}+32)(x+16)$ <br> <br> <br> 
+
+ Simplify: $A =  8192+ \dfrac{131072}{x}+32x+512$ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p27Ahint2')" href="javascript:;" >Step 3: Take derivative of combined area equation 
+
+ </a>
+
+<div class="mid" id="QPYtest3p27Ahint2" style="DISPLAY: none" >
+
+ $A' = \dfrac{-131072}{x^{2}} + 32$ 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p27Ahint3')" href="javascript:;" >Step 4: Optimize and solve combined area equation 
+
+</a>
+
+<div class="mid" id="QPYtest3p27Ahint3" style="DISPLAY: none" >
+
+ $\dfrac{-131072}{x^{2}} + 32 = 0 $   <br> <br> <br> 
+
+ $  -131072=  - 32 x^{2}$ <br> <br> <br> 
+
+ $   4096=    x^{2}$ <br> <br> <br> 
+
+ $   64=    x $ <br> <br> <br> 
+
+</div>
+
+<br><a onclick ="javascript:ShowHide('QPYtest3p27Ahint4')" href="javascript:;" >Step 5: Solve for the otherside 
+
+</a>
+
+<div class="mid" id="QPYtest3p27Ahint4" style="DISPLAY: none" >
+
+ $y = \dfrac{8192}{x} = \dfrac{8192}{ 64}=128$ 
+
+</div>
+
+</p>
+
+<h1 style="text-align:center"> Optimizing Area Problem Generator <br> </h1>
+
+<p class="s1" id="bodyp10">
+
+<br><a onclick ="javascript:ShowHide('test3p27Arandom')" href="javascript:;" >See Another Example, Look for the Pattern 
+
+</a><br>
+
+<input id="test3p27Abtn" type="button" value="Generate Now" onclick="myFunctiontest3p27A();" />
+
+<div class="mid" id="test3p27Arandom" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<br><a onclick ="javascript:ShowHide('test3p27Arandomans')" href="javascript:;" >See Solution Steps 
+
+</a><br>
+
+<div class="mid" id="test3p27Arandomans" style="DISPLAY: none" > 
+
+Second</div><br>
+
+<script>
+
+myFunctiontest3p27A()
+
+ function myFunctiontest3p27A() {var b = Math.floor(Math.random() * 20)+2 ; 
+
+var a =   Math.floor(Math.random() * 10) ; 
+
+var c =   b*a*a*a ;   
+
+document.getElementById("test3p27Arandom").innerHTML = "Question <br>A rectangular flower garden with an area of   "+c.toString()+"  m$^{2}$ is surrounded by a grass border    "+a.toString()+"   m wide on two sides and   "+b.toString()+"  m wide on the other two sides.  What dimensions of the the garden minimize the combined area of the garden and borders? "  ;
+
+var math = document.getElementById("test3p27Arandom");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+
+document.getElementById("test3p27Arandomans").innerHTML = "Answer  <br><br> Step 1: $y= \\dfrac{"+c.toString()+"}{x}     $   <br><br> Step 2: $A=( \\dfrac{"+c.toString()+"}{x}+ "+(2*a).toString()+")(x+"+(2*b).toString()+")  $   <br><br> Step 3: $A="+c.toString()+"+\\dfrac{"+(b*c).toString()+"}{x}+"+(2*a).toString()+"x+ "+(2*a*2*b).toString()+"  $   <br><br> Step 4: $A'= \\dfrac{-"+(b*c).toString()+"}{x^{2}}+"+(2*a).toString()+"   $   <br><br> Step 5: $ \\dfrac{-"+(b*c).toString()+"}{x^{2}}+"+(2*a).toString()+"  =0   $   <br><br> Step 6: $  -"+(b*c).toString()+"   =-"+(2*a).toString()+"x^{2}   $   <br><br> Step 7: $   "+(a*a).toString()+"   = x    $   <br><br> Step 8: $   y  =    \\dfrac{"+c.toString()+"}{ "+(a*a).toString()+"}="+(b*a).toString()+"    $   "  ;
+
+var math2 = document.getElementById("test3p27Arandomans");
+
+MathJax.Hub.Queue(["Typeset",MathJax.Hub,math2]);
+
+}</script></p>
+
+</body>
+</html>
